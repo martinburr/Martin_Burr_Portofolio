@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>codingsbums.com – Portfolio</title>
+    <meta name="description"
+        content="Portfolio von Martin Burr – Full Stack Developer & Creative. Projekte: Dreiz.de, Lucianaburr.com, Josgebäudeservice.de" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="logo">codingsbums<span class="logo-dot">.com</span></a>
+
+        <div class="nav-center">
+            <button class="lang-btn active" data-lang="de">DE</button>
+            <span class="lang-sep">|</span>
+            <button class="lang-btn" data-lang="pt">PT</button>
+            <span class="lang-sep">|</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+        </button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-content">
+            <div class="avatar-ring">
+                <div class="avatar-inner">
+                    <img src="avatar-placeholder.jpg" alt="Martin Burr" class="avatar-img" id="avatarImg"
+                        onerror="this.style.display='none'; document.getElementById('avatarFallback').style.display='flex'" />
+                    <div class="avatar-fallback" id="avatarFallback">
+                        <span>MB</span>
+                    </div>
+                </div>
+            </div>
+            <h1 class="hero-name">
+                Martin Burr
+                <span class="hero-title-line" data-i18n="hero_subtitle">Full Stack Developer &amp; Creative</span>
+            </h1>
+            <div class="hero-tags">
+                <span class="tag" data-i18n="tag_web">Web Development</span>
+                <span class="tag" data-i18n="tag_design">Design</span>
+                <span class="tag" data-i18n="tag_surfboard">Surfboard Shaper</span>
+            </div>
+            <a href="#scene" class="scroll-cta" data-i18n="scroll_cta">
+                <span></span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg>
+            </a>
+        </div>
+        <div class="hero-wave"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       SCROLL ANIMATION SCENE
+  ═══════════════════════════════════════════ -->
+    <section class="scene-section" id="scene">
+        <div class="scene-sticky">
+            <div class="scene-canvas" id="sceneCanvas">
+
+                <!-- Background sky -->
+                <div class="sky-gradient"></div>
+
+                <!-- Sun -->
+                <div class="sun" id="sun"></div>
+
+                <!-- Water -->
+                <div class="water" id="water">
+                    <div class="wave-svg-wrap">
+                        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="wave-svg">
+                            <path d="M0,60 C200,120 400,0 600,60 C800,120 1000,0 1200,60 L1200,120 L0,120 Z"
+                                fill="var(--water-color)" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Sand -->
+                <div class="sand" id="sand"></div>
+
+                <!-- Palm Tree Assembly -->
+                <div class="palm-wrapper" id="palmWrapper">
+
+                    <!-- Stump -->
+                    <div class="palm-stump" id="palmStump"></div>
+
+                    <!-- Trunk segments -->
+                    <div class="palm-trunk-container" id="palmTrunk">
+                        <div class="trunk-seg seg1"></div>
+                        <div class="trunk-seg seg2"></div>
+                        <div class="trunk-seg seg3"></div>
+                        <div class="trunk-seg seg4"></div>
+                        <div class="trunk-seg seg5"></div>
+                    </div>
+
+                    <!-- Coconuts -->
+                    <div class="palm-coconuts" id="palmCoconuts">
+                        <div class="coconut c1"></div>
+                        <div class="coconut c2"></div>
+                        <div class="coconut c3"></div>
+                    </div>
+
+                    <!-- Leaves -->
+                    <div class="palm-crown" id="palmCrown">
+                        <div class="palm-leaf leaf-1"></div>
+                        <div class="palm-leaf leaf-2"></div>
+                        <div class="palm-leaf leaf-3"></div>
+                        <div class="palm-leaf leaf-4"></div>
+                        <div class="palm-leaf leaf-5"></div>
+                        <div class="palm-leaf leaf-6"></div>
+                        <div class="palm-leaf leaf-7"></div>
+                    </div>
+
+                </div>
+                <!-- /palm-wrapper -->
+
+                <!-- Longboard / Surfboard -->
+                <div class="longboard-wrapper" id="longboardWrapper">
+                    <div class="longboard" id="longboard">
+                        <div class="board-body">
+                            <div class="board-stripe"></div>
+                            <div class="board-logo">CB</div>
+                        </div>
+                        <div class="fin"></div>
+                    </div>
+                </div>
+
+                <!-- Scene label -->
+                <div class="scene-label" id="sceneLabel">
+                    <p class="scene-text" data-i18n="scene_text">Scroll to experience the vibe</p>
+                </div>
+
+            </div><!-- /scene-canvas -->
+        </div><!-- /scene-sticky -->
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       PORTFOLIO SECTION
+  ═══════════════════════════════════════════ -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow" data-i18n="portfolio_eyebrow">Selected Work</span>
+                <h2 class="section-title" data-i18n="portfolio_title">Portfolio</h2>
+                <p class="section-desc" data-i18n="portfolio_desc">A collection of websites designed and developed with
+                    passion.</p>
+            </div>
+
+            <div class="portfolio-grid">
+
+                <!-- Card 1: Dreiz.de -->
+                <article class="port-card" data-tilt>
+                    <div class="port-card-img"
+                        style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);">
+                        <div class="port-preview">
+                            <div class="preview-bar">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="preview-content dreiz-preview">
+                                <div class="prev-logo">DREIZ</div>
+                                <div class="prev-tagline">Premium Hair &amp; Beauty</div>
+                                <div class="prev-img-row">
+                                    <div class="prev-block b1"></div>
+                                    <div class="prev-block b2"></div>
+                                    <div class="prev-block b3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="port-overlay">
+                            <a href="https://dreiz.de" target="_blank" rel="noopener" class="port-link"
+                                data-i18n="visit_site">Visit Site →</a>
+                        </div>
+                    </div>
+                    <div class="port-card-body">
+                        <div class="port-tags">
+                            <span class="ptag">E-Commerce</span>
+                            <span class="ptag">Design</span>
+                            <span class="ptag">Luxury</span>
+                        </div>
+                        <h3 class="port-title">Dreiz.de</h3>
+                        <p class="port-desc" data-i18n="dreiz_desc">Premium beauty brand — luxury redesign with
+                            immersive product experience.</p>
+                        <div class="port-tech">
+                            <span>HTML</span><span>CSS</span><span>GSAP</span><span>JS</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: Lucianaburr.com -->
+                <article class="port-card" data-tilt>
+                    <div class="port-card-img"
+                        style="background: linear-gradient(135deg, #2d1b69 0%, #5e2d79 50%, #c06c84 100%);">
+                        <div class="port-preview">
+                            <div class="preview-bar">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="preview-content luciana-preview">
+                                <div class="prev-logo" style="color:#f8b4d9;">Luciana Burr</div>
+                                <div class="prev-tagline" style="color:#f0c8e0;">Artist &amp; Creator</div>
+                                <div class="prev-gallery">
+                                    <div class="gallery-block g1"></div>
+                                    <div class="gallery-block g2"></div>
+                                    <div class="gallery-block g3"></div>
+                                    <div class="gallery-block g4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="port-overlay">
+                            <a href="https://lucianaburr.com" target="_blank" rel="noopener" class="port-link"
+                                data-i18n="visit_site">Visit Site →</a>
+                        </div>
+                    </div>
+                    <div class="port-card-body">
+                        <div class="port-tags">
+                            <span class="ptag">Portfolio</span>
+                            <span class="ptag">Art</span>
+                            <span class="ptag">Gallery</span>
+                        </div>
+                        <h3 class="port-title">Lucianaburr.com</h3>
+                        <p class="port-desc" data-i18n="luciana_desc">Creative portfolio for artist Luciana Burr —
+                            expressive gallery & personal brand.</p>
+                        <div class="port-tech">
+                            <span>HTML</span><span>CSS</span><span>Gallery</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Josgebäudeservice.de -->
+                <article class="port-card" data-tilt>
+                    <div class="port-card-img"
+                        style="background: linear-gradient(135deg, #0a2a0a 0%, #1a5c1a 50%, #2d8a3e 100%);">
+                        <div class="port-preview">
+                            <div class="preview-bar">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="preview-content jos-preview">
+                                <div class="prev-logo" style="color:#7eff7a;">Jos Gebäudeservice</div>
+                                <div class="prev-tagline" style="color:#a8f0a8;">Gebäudereinigung &amp; Service</div>
+                                <div class="prev-services">
+                                    <div class="serv-item">🏢 Reinigung</div>
+                                    <div class="serv-item">🌿 Gartenpflege</div>
+                                    <div class="serv-item">🔧 Wartung</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="port-overlay">
+                            <a href="https://josgebäudeservice.de" target="_blank" rel="noopener" class="port-link"
+                                data-i18n="visit_site">Visit Site →</a>
+                        </div>
+                    </div>
+                    <div class="port-card-body">
+                        <div class="port-tags">
+                            <span class="ptag">Business</span>
+                            <span class="ptag">Services</span>
+                            <span class="ptag">Local</span>
+                        </div>
+                        <h3 class="port-title">Josgebäudeservice.de</h3>
+                        <p class="port-desc" data-i18n="jos_desc">Professional building services company — clean,
+                            trustworthy business website.</p>
+                        <div class="port-tech">
+                            <span>HTML</span><span>CSS</span><span>Responsive</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow" data-i18n="contact_eyebrow">Get In Touch</span>
+                <h2 class="section-title" data-i18n="contact_title">Kontakt</h2>
+                <p class="section-desc" data-i18n="contact_desc">Have a project idea? Let's talk — I'd love to hear from
+                    you.</p>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="formName" data-i18n="form_name">Name</label>
+                        <input type="text" id="formName" name="name" placeholder="Martin Mustermann" required
+                            autocomplete="name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="formEmail" data-i18n="form_email">E-Mail</label>
+                        <input type="email" id="formEmail" name="email" placeholder="hallo@example.com" required
+                            autocomplete="email" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="formSubject" data-i18n="form_subject">Betreff</label>
+                    <input type="text" id="formSubject" name="subject" placeholder="Projekt Anfrage…" />
+                </div>
+                <div class="form-group">
+                    <label for="formMessage" data-i18n="form_message">Nachricht</label>
+                    <textarea id="formMessage" name="message" rows="6" placeholder="Erzähl mir von deinem Projekt…"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn-send" id="btnSend">
+                    <span data-i18n="form_send">Nachricht senden</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                </button>
+                <div class="form-success" id="formSuccess" data-i18n="form_success">✓ Nachricht gesendet! Ich melde mich
+                    bald.</div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+    <footer class="footer" id="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="footer-logo">codingsbums<span class="logo-dot">.com</span></span>
+                <p class="footer-tagline" data-i18n="footer_tagline">Coded with ☀️ &amp; 🏄 by Martin Burr</p>
+            </div>
+            <nav class="footer-links" aria-label="Footer navigation">
+                <a href="#" data-i18n="impressum">Impressum</a>
+                <span>·</span>
+                <a href="#" data-i18n="datenschutz">Datenschutz</a>
+                <span>·</span>
+                <a href="#" data-i18n="agb">AGB</a>
+            </nav>
+            <p class="footer-copy">© <span id="year"></span> Martin Burr. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
